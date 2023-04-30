@@ -1,0 +1,81 @@
+<div class="main-div">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Diabetes detection</mat-card-title>
+            <mat-card-subtitle>Learn whether you are at high risk of diabetes</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image
+            src="https://storage.googleapis.com/kaggle-datasets-images/3102947/5344155/d4f2d9d63736fff7b6ba10f73774752e/dataset-cover.png?t=2023-04-08-06-42-24"
+            alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <p>
+                The Diabetes prediction dataset is a collection of medical and demographic data from patients, along
+                with their diabetes status (positive or negative). The data includes features such as age, gender, body
+                mass index (BMI), hypertension, heart disease, smoking history, HbA1c level, and blood glucose level.
+                This dataset can be used to build machine learning models to predict diabetes in patients based on their
+                medical history and demographic information. This can be useful for healthcare professionals in
+                identifying patients who may be at risk of developing diabetes and in developing personalized treatment
+                plans. Additionally, the dataset can be used by researchers to explore the relationships between various
+                medical and demographic factors and the likelihood of developing diabetes.
+                <br>
+                <a href="https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset" target="_blank"
+                    rel="noopener noreferrer">Learn more</a>
+            </p>
+            <p *ngIf="accurracy">
+                Training information.
+                <br>
+                Accuracy (a measure of generalization): {{accurracy}}
+            </p>
+            <p>
+                <mat-form-field class="example-form-field">
+                    <mat-label>try it out</mat-label>
+                    <input matInput type="number" [(ngModel)]="value">
+                    <mat-hint>Use the Excel below, with data</mat-hint>
+                </mat-form-field>
+
+            </p>
+            <p *ngIf="prediction_value">
+                Prediction: {{prediction_value*100}}%
+                <br>
+                <span *ngIf="prediction_value>0.5"><strong>You are at high chance</strong></span>
+                <span *ngIf="prediction_value<0.5"> <strong>You are at low chance </strong></span>
+
+            </p>
+
+            <br>
+
+            Used for prediction
+            <ul>
+                <li>HbA1c level</li>
+            </ul>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button [disabled]="training">Train model</button>
+            <button mat-button (click)=" predict()" [disabled]="training">Enlighten me</button>
+
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+<div class="confusion ">
+    <h1>Confusion Matrix</h1>
+    <mat-grid-list cols="2" rowHeight="6:1">
+        <mat-grid-tile>{{this.confusion.tp}}%</mat-grid-tile>
+        <mat-grid-tile>{{this.confusion.fp}}%</mat-grid-tile>
+        <mat-grid-tile>{{this.confusion.fn}}%</mat-grid-tile>
+        <mat-grid-tile>{{this.confusion.tn}}%</mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+
+<section class="dataset main-div">
+    <img src="./assets/gray area.png" alt="">
+</section>
+
+<section class="dataset main-div">
+    <iframe width="400" height="1000"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTIscV53ecu0x-apaqh1Sk3ED3qlVdMLxh9AcPdhDPH2VNogn-kKfAP8j9MYKWk7_inouIR9dFMDaUe/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false">
+    </iframe>
+</section>

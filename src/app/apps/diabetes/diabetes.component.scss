@@ -1,0 +1,31 @@
+.example-card {
+    max-width: 700px;
+
+}
+
+.example-header-image {
+    background-image: url('https://images.unsplash.com/photo-1593377201811-4516986cbe41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80');
+    background-size: cover;
+}
+
+.main-div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.dataset {
+    margin-top: 20rem;
+}
+
+mat-grid-tile {
+    background: lightblue;
+}
+
+.confusion {
+    margin-top: 10rem;
+    margin-right: 30rem;
+    margin-left: 30rem;
+}
