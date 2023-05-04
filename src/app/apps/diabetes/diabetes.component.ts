@@ -205,10 +205,10 @@ export class DiabetesComponent implements OnInit {
 
     // console.log(aux_confusion);
 
-    this.confusion.tp = aux_confusion[0] / 10;
-    this.confusion.fp = aux_confusion[1] / 10;
-    this.confusion.fn = aux_confusion[2] / 10;
-    this.confusion.tn = aux_confusion[3] / 10;
+    this.confusion.tp = aux_confusion[0] / 20;
+    this.confusion.fp = aux_confusion[1] / 20;
+    this.confusion.fn = aux_confusion[2] / 20;
+    this.confusion.tn = aux_confusion[3] / 20;
 
     console.log(this.confusion);
 

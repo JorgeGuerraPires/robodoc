@@ -62,10 +62,10 @@
 <div class="confusion ">
     <h1>Confusion Matrix</h1>
     <mat-grid-list cols="2" rowHeight="6:1">
-        <mat-grid-tile>{{this.confusion.tp}}%</mat-grid-tile>
-        <mat-grid-tile>{{this.confusion.fp}}%</mat-grid-tile>
-        <mat-grid-tile>{{this.confusion.fn}}%</mat-grid-tile>
-        <mat-grid-tile>{{this.confusion.tn}}%</mat-grid-tile>
+        <mat-grid-tile [style.background]="'green'">TP: {{this.confusion.tp}}%</mat-grid-tile>
+        <mat-grid-tile [style.background]="'red'">FP: {{this.confusion.fp}}%</mat-grid-tile>
+        <mat-grid-tile [style.background]="'red'">FN: {{this.confusion.fn}}%</mat-grid-tile>
+        <mat-grid-tile [style.background]="'green'">TN: {{this.confusion.tn}}%</mat-grid-tile>
     </mat-grid-list>
 </div>
 
